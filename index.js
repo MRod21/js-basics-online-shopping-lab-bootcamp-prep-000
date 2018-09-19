@@ -26,6 +26,7 @@ function total() {
   for (var i = 0; i < cart.length; i++) {
     z += cart[i][Object.keys(cart[i])]
   }
+  return z
 }
 
 function removeFromCart(item) {
