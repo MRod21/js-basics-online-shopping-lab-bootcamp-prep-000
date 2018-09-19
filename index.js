@@ -18,27 +18,23 @@ function addToCart(item) {
 }	
 
 function viewCart() {
-   if (cart.length === 0){
-    console.log('Your shopping cart is empty.')
-  } else if (cart.length === 1){
-    var oneItem = `In your cart, you have ${Object.keys(cart[0])} at $${Object.values(cart[0])}.`
-    console.log(oneItem)
-  } else if (cart.length === 2){
-    var twoItems = `In your cart, you have ${Object.keys(cart[0])} at $${Object.values(cart[0])} and ${Object.keys(cart[1])} at $${Object.values(cart[1])}.`
-    console.log(twoItems)
+    let message = "In your cart, you have"
+  if(cart.length === 0){
+    message = "Your shopping cart is empty."
   } else {
-    var cartData = []
-    for (var i = 0; i < cart.length-1; i++){
-      cartData.push(`${Object.keys(cart[i])} at $${Object.values(cart[i])}`)
-
+    for(let i = 0; i < cart.length; i++){
+      let toAdd = Object.values(cart[i])
+      if(i === cart.length - 1 && cart.length > 1){
+        message = message + ` and ${toAdd[0]} at $${toAdd[1]}.`
+      } else if(cart.length === 1) {
+         message = message + ` ${toAdd[0]} at $${toAdd[1]}.`
+      } else {
+        message = message + ` ${toAdd[0]} at $${toAdd[1]},`
+      }
     }
-    var threePlusItems = `In your cart, you have ${cartData.join(', ')}, and ${Object.keys(cart[cart.length-1])} at $${Object.values(cart[cart.length-1])}.`
   }
-  console.log(threePlusItems)
-}
-
-viewCart()
-
+  return message
+}	
 
 function total() {
   var cartItemPrice = [];
