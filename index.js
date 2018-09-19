@@ -22,7 +22,8 @@ function viewCart() {
 
 function total() {
   // write your code here
-  var z = 0
+  var z = 100
+  for ()
 }
 
 function removeFromCart(item) {
