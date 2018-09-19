@@ -37,22 +37,13 @@ function viewCart() {
 }	
 
 function total() {
-  var cartItemPrice = [];
-  var totalPrice = 0
-  
-  for(var i = 0; i < cart.length; i++) {
-    var itemPrice = cart[i][Object.keys(cart[i])]
-      cartItemPrice.push(itemPrice)
-    }
-  
-  for (var a = 0; a < cartItemPrice.length; a++) {
-    totalPrice = cartItemPrice[a]+=totalPrice
+  let total = 0
+  for(let i = 0; i < cart.length; i++){
+    let toAdd = Object.values(cart[i])
+    total += toAdd[1]
   }
-  return totalPrice
+  return total
 }
-
-total()
-
 
 function removeFromCart(item) {
   for (var i = 0; i < cart.length; i++){
