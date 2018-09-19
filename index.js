@@ -21,13 +21,7 @@ function viewCart() {
   // write your code here
 }
 
-function total() {
-  var z = 100
-  for (var i = 0; i < cart.length; i++) {
-    z += cart[i][Object.keys(cart[i])]
-  }
-  return z
-}
+function total() 
 
 function removeFromCart(item) {
   // write your code here
