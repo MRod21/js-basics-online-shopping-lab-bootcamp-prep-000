@@ -24,7 +24,7 @@ function total() {
   // write your code here
   var z = 100
   for (var i = 0; i < cart.length; i++) {
-    z +=
+    z += cart[i]
   }
 }
 
